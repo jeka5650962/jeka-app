@@ -1,0 +1,13 @@
+.nav {
+    grid-area: n;
+    background-color: coral;
+    padding: 20px;
+}
+
+.item {
+    padding: 0 0 10px 0;
+}
+
+.item a {
+    color: white;
+}
