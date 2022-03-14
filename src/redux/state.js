@@ -24,8 +24,16 @@ let state = {
             {id: 4, message: "Hello, World!",},
             {id: 5, message: "Talk to me please!",},
         ],
-    }
+    },
 
-}
+    sidebar: {
+        friendsName: [
+            {id: 0, name: 'Dima',},
+            {id: 1, name: 'Lena',},
+            {id: 2, name: 'Andrey',},
+        ],
+    },
+
+};
 
 export default state;

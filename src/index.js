@@ -11,6 +11,7 @@ ReactDOM.render(
             posts={state.profilePage.posts}
             dialogs={state.dialogsPage.dialogs}
             messages={state.dialogsPage.messages}
+            friendsName={state.sidebar.friendsName}
         />
     </React.StrictMode>,
     document.getElementById('root')
