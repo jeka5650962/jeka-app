@@ -3,8 +3,8 @@ import style from "./News.module.css";
 
 const News = (props) => {
     return (
-        <div>
-            News
+        <div className={style.news}>
+            <h3>News</h3>
         </div>
     );
 };

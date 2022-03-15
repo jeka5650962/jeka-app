@@ -4,12 +4,6 @@ import FriendsItem from "./FriendsItem/FriendsItem";
 
 const Friends = (props) => {
 
-    // let friendsName = [
-    //     {id: 0, name: 'Dima',},
-    //     {id: 1, name: 'Lena',},
-    //     {id: 2, name: 'Andrey',},
-    // ];
-
     let friendsNameElements = props.friendsName.map(f => <FriendsItem name={f.name} id={f.id}/>);
 
     return (

@@ -11,3 +11,17 @@
 .item a {
     color: white;
 }
+
+.sidebarFriends {
+    padding: 20px;
+    background-color: coral;
+    color: white;
+}
+
+.sidebarFriendsTitle {
+    margin: 0 0 20px 0;
+}
+
+.sidebarFriendsTitle a {
+    color: white;
+}

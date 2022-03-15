@@ -2,7 +2,8 @@ import React from "react";
 import style from "./Navbar.module.css";
 import {NavLink} from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (props) => {
+
     return (
         <nav className={style.nav}>
             <div className={style.item}>
@@ -25,6 +26,7 @@ const Navbar = () => {
             </div>
         </nav>
     );
+
 };
 
 export default Navbar;

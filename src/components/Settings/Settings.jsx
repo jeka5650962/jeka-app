@@ -3,8 +3,8 @@ import style from "./Settings.module.css";
 
 const Settings = (props) => {
     return (
-        <div>
-            Settings
+        <div className={style.settings}>
+            <h3>Settings</h3>
         </div>
     );
 };
