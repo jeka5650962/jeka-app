@@ -25,3 +25,13 @@
 .sidebarFriendsTitle a {
     color: white;
 }
+
+.friends {
+    display: flex;
+    margin: 20px 0 0 0;
+    font-size: 18px;
+}
+
+.friendsBar {
+    margin: 40px 0 0 0;
+}

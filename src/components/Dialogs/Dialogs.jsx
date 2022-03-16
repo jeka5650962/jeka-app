@@ -5,25 +5,6 @@ import Message from "./Message/Message";
 
 const Dialogs = (props) => {
 
-    // let dialogs = [
-    //     {id: 1, name: 'Dima',},
-    //     {id: 2, name: 'Andrey',},
-    //     {id: 3, name: 'Lena',},
-    //     {id: 4, name: 'Sasha',},
-    //     {id: 5, name: 'Viktor',},
-    //     {id: 6, name: 'Valera',},
-    // ];
-    //
-    // let messages = [
-    //     {id: 1, message: "Hi, how are you?",},
-    //     {id: 2, message: "What is your name?",},
-    //     {id: 3, message: "I was born in Belarus",},
-    //     {id: 4, message: "Hello, World!",},
-    //     {id: 5, message: "Talk to me please!",},
-    // ];
-
-    // Из массивов объектов получаем массивы jsx-элементов:
-
     let dialogsElements = props.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
     let messagesElements = props.messages.map(m => <Message message={m.message} id={m.id}/>);
 
