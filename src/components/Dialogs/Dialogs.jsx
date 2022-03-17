@@ -13,6 +13,12 @@ const Dialogs = (props) => {
     И назовем его d. Приходит элемент d (это каждый объект из массива dialogs) и возвращаем jsx-элемент,
     где в props в качестве name и id передаются {d.name} и {d.id} соответственно. */
 
+    let newMessageElement = React.createRef();
+    let addMessage = () => {
+        let text = newMessageElement.current.value;
+        alert(text);
+    };
+
     return (
         <div className={style.dialogs}>
             <div className={style.dialogsItems}>
@@ -20,6 +26,10 @@ const Dialogs = (props) => {
             </div>
             <div className={style.messages}>
                 {messagesElements}
+                <div>
+                    <textarea name="" id="" cols="30" rows="10" ref={newMessageElement}>Напишите Ваше сообщение</textarea>
+                </div>
+                <button onClick={addMessage} className={style.buttonAddMessage}>Add</button>
             </div>
         </div>
     );
