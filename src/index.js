@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import state from './redux/state';
+import {addPost} from './redux/state';
+
+addPost('Уроки React JS');
 
 ReactDOM.render(
     <React.StrictMode>
@@ -12,6 +15,7 @@ ReactDOM.render(
             dialogs={state.dialogsPage.dialogs}
             messages={state.dialogsPage.messages}
             friendsName={state.sidebar.friendsName}
+            addPost={addPost}
         />
     </React.StrictMode>,
     document.getElementById('root')

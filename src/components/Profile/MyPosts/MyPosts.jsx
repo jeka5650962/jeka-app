@@ -17,9 +17,12 @@ const MyPosts = (props) => {
 
     let newPostElement = React.createRef(); /* Означает "создай ссылку" */
 
+    /* ↓ В пропсах приходит функция addPost, которую можем вызвать. Но функция принадлежит миру BLL. Мы просто передали
+    ее имя как ссылку. Бизнес-функция будет менять бизнес-объект (бизнес-состояние, state воспринимать как БД) */
+
     let addPost = () => {
         let text = newPostElement.current.value;
-        alert(text);
+        props.addPost(text);
     };
 
     /* ↑ Мы говорим: "Эй ссылка, ты являешься объектом, у тебя есть свойство current (current ссылается на нативный html
@@ -33,7 +36,7 @@ const MyPosts = (props) => {
                 <div>
                     <textarea ref={newPostElement}>Some text</textarea> {/* Привязываем ссылку к textarea */}
                 </div>
-                <button onClick={addPost}>Add post</button>
+                <button onClick={addPost} className={style.buttonAddMessage}>Add post</button>
             </div>
             <div className={style.posts}>
                 {postsElements}
