@@ -34,7 +34,7 @@ const MyPosts = (props) => {
             <h3>My Posts</h3>
             <div>
                 <div>
-                    <textarea ref={newPostElement}>Some text</textarea> {/* Привязываем ссылку к textarea */}
+                    <textarea ref={newPostElement}>Some text</textarea> {/* Привязываем ссылку к тегу textarea */}
                 </div>
                 <button onClick={addPost} className={style.buttonAddMessage}>Add post</button>
             </div>
