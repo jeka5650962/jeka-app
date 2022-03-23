@@ -23,6 +23,7 @@ const MyPosts = (props) => {
     let addPost = () => {
         let text = newPostElement.current.value;
         props.addPost(text);
+        newPostElement.current.value = ''; /* Обнуление textarea */
     };
 
     /* ↑ Мы говорим: "Эй ссылка, ты являешься объектом, у тебя есть свойство current (current ссылается на нативный html
