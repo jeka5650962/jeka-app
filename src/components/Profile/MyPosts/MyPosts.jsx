@@ -21,13 +21,16 @@ const MyPosts = (props) => {
     ее имя как ссылку. Бизнес-функция будет менять бизнес-объект (бизнес-состояние, state воспринимать как БД) */
 
     let addPost = () => {
-        let text = newPostElement.current.value;
-        props.addPost(text);
-        newPostElement.current.value = ''; /* Обнуление textarea */
+        props.addPost();
     };
 
     /* ↑ Мы говорим: "Эй ссылка, ты являешься объектом, у тебя есть свойство current (current ссылается на нативный html
     элемент)". И у этого html элемента берем value */
+
+    let onPostChange = () => {
+        let text = newPostElement.current.value;
+        props.updateNewPostText(text);
+    }
 
     return (
 
@@ -35,7 +38,10 @@ const MyPosts = (props) => {
             <h3>My Posts</h3>
             <div>
                 <div>
-                    <textarea ref={newPostElement}>Some text</textarea> {/* Привязываем ссылку к тегу textarea */}
+                    <textarea onChange={onPostChange}
+                              ref={newPostElement}
+                              value={props.newPostText}
+                    />
                 </div>
                 <button onClick={addPost} className={style.buttonAddMessage}>Add post</button>
             </div>
