@@ -8,7 +8,7 @@ let state = {
             {id: 1, message: "It's my first project", likesCount: 26},
             {id: 2, message: "Bla bla", likesCount: 6},
         ],
-        newPostText: 'Уроки React JS - Вынос мозга',
+        newPostText: 'Уроки React JS - Вынос мозга!!!',
     },
 
     dialogsPage: {
@@ -27,6 +27,7 @@ let state = {
             {id: 4, message: "Hello, World!",},
             {id: 5, message: "Talk to me please!",},
         ],
+        newMessageText: 'Привет, дружище! Как твои дела?',
     },
 
     sidebar: {
@@ -38,6 +39,8 @@ let state = {
     },
 
 };
+
+/* ------------------------- Посты ------------------------- */
 
 export let addPost = () => {
     let newPost = {
@@ -52,6 +55,23 @@ export let addPost = () => {
 
 export let updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+};
+
+/* ------------------------- Сообщения ------------------------- */
+
+export let addMessage = () => {
+    let newMessage = {
+        id: 6,
+        message: state.dialogsPage.newMessageText,
+    };
+    state.dialogsPage.messages.push(newMessage);
+    state.dialogsPage.newMessageText = '';
+    rerenderEntireTree(state);
+};
+
+export let updateNewMessageText = (newText) => {
+    state.dialogsPage.newMessageText = newText;
     rerenderEntireTree(state);
 };
 

@@ -5,18 +5,23 @@ import Message from "./Message/Message";
 
 const Dialogs = (props) => {
 
-    let dialogsElements = props.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
-    let messagesElements = props.messages.map(m => <Message message={m.message} id={m.id}/>);
+    let dialogsElements = props.dialogsPage.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
+    let messagesElements = props.dialogsPage.messages.map(m => <Message message={m.message} id={m.id}/>);
 
     /* Мапим и передаем внутрь map стрелочную функцию. Эта стрелочная функция вызывается столько раз, сколько
     элементов в массиве. И каждый раз функция map засунет в эту функцию конкретный элемент исходного массива.
     И назовем его d. Приходит элемент d (это каждый объект из массива dialogs) и возвращаем jsx-элемент,
     где в props в качестве name и id передаются {d.name} и {d.id} соответственно. */
 
-    let newMessageElement = React.createRef();
+    let newMessageElement = React.createRef(); /* Означает "создай ссылку" */
+
     let addMessage = () => {
+        props.addMessage();
+    };
+
+    let onMessageChange = () => {
         let text = newMessageElement.current.value;
-        alert(text);
+        props.updateNewMessageText(text);
     };
 
     return (
@@ -24,10 +29,14 @@ const Dialogs = (props) => {
             <div className={style.dialogsItems}>
                 {dialogsElements}
             </div>
-            <div className={style.messages}>
+            <div>
                 {messagesElements}
                 <div>
-                    <textarea name="" id="" cols="30" rows="10" ref={newMessageElement}>Напишите Ваше сообщение</textarea>
+                    <textarea
+                        onChange={onMessageChange}
+                        ref={newMessageElement}
+                        value={props.dialogsPage.newMessageText}
+                    />
                 </div>
                 <button onClick={addMessage} className={style.buttonAddMessage}>Add</button>
             </div>
